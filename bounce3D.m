@@ -11,7 +11,7 @@ a=2/3;        %coefficient of I: 2/3 for hollow sphere, 2/5 for solid sphere
 I=a*m*r^2;    %moment of inertia
 
 %horizontal coefficients of restitution in x and z
-%and verical coefficient of restitution 
+%and vertical coefficient of restitution 
 %ey is between 0 and 1
 %ex is between -1 and 1. -1: no friction, 0: rolling, completely inelastic,
 %1 completely elastic collision that reverse sign of the velocity of the
@@ -71,7 +71,7 @@ BOUNCE=[(1-a*ex)/(a+1) 0 0 0 0 -a*(ex+1)/(a+1)*r;
     0 0 0 0 1 0;
     -(ex+1)/(a+1)/r 0 0 0 0 (a-ex)/(a+1)];
 
-%air matrix
+%air matrix, calculates conditions before bounce n+1 from after bounce n in vacuum
 AIR=eye(6);
 AIR(2,2)=-1;
 
